@@ -10,11 +10,11 @@ describe('Bowling',()=>{
              
     });*/
         it('Should throw error when frame size is less than 10 for the rolls',()=>{
-            expect(findScore([3, 6, 3, 6, 3, 6, 3])).toThrow(Error);
+            expect(()=>findScore([3, 6, 3, 6, 3, 6, 3])).toThrow(Error);
                  
         });
         it('Should throw error when frame size is greater than 10 for the rolls',()=>{
-            expect(findScore([3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6])).toThrow(Error);
+            expect(()=>findScore([3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6])).toThrow(Error);
                  
         });
         it('Should find score for rolls whose frame size is 10',()=>{
