@@ -6,10 +6,22 @@ let findScore = (rolls) => {
     let score = 0;
     var frameCount = 0;
     var index = 0;
+    if(!Array.isArray(rolls)){
+        throw new Error();
+    }
     const result = rolls.reduce((frame, currentValue) => {
         console.log(frame);
         console.log('index' + index);
         console.log('frame count' + frameCount);
+        if(currentValue <0 || currentValue>10){
+            throw new Error();
+        }
+        if(!Number.isInteger(currentValue)){
+            throw new Error();
+        }
+        
+    
+        
 
         if (frameCount == totalFrame && index < rolls.length - 2) {
             throw new Error();
@@ -75,6 +87,7 @@ let findScore = (rolls) => {
     if (typeof (result) != 'undefined') {
         console.log(result.length);
     }
+    
     if (frameCount != totalFrame) {
         throw new Error();
     }
