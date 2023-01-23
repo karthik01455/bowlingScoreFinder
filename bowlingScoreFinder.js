@@ -19,10 +19,6 @@ let findScore = (rolls) => {
         if(!Number.isInteger(currentValue)){
             throw new Error();
         }
-        
-    
-        
-
         if (frameCount == totalFrame && index < rolls.length - 2) {
             throw new Error();
         }
@@ -95,6 +91,16 @@ let findScore = (rolls) => {
 
     return score;
 };
+function getMaxScore(rollsArray)
+{
+    let maxScore=-1;
+    
+    rollsArray.forEach((rolls)=>{
+        maxScore= Math.max(maxScore,findScore(rolls));
+    });
+    return maxScore;
+}
+
 let result = findScore([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 7, 1]);
 console.log(result);
 result = findScore([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 10, 10]);
